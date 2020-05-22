@@ -38,19 +38,19 @@ A Key-Value database for the command-line and in Python, backed by SQLite3
 
     you@computer:~ $ python3 ~/PesdaDB/pesdadb.py --set foo bar
 
-    you@computer:~ $ python3 ~/PesdaDB/pesdadb.py --get foo baz
+    you@computer:~ $ python3 ~/PesdaDB/pesdadb.py --get foo ""
     bar
 
 ### It always wants a default value 
 
-...in case the key does not exist, so just specify an empty string if you don't care
+...in case the key does not exist, but just specify an empty string if you don't care, (as above)
 
-    you@computer:~ $ python3 ~/PesdaDB/pesdadb.py --get foo ""
-    bar
+    you@computer:~ $ python3 ~/PesdaDB/pesdadb.py --get foo2 bar2
+    bar2
 
 ### Set a default value
 
-if you want to overwrite a set of new default settings for your program, but this won't replace any existing ones
+If you want to overwrite a set of new default settings for your program, then this won't replace any existing ones
 
     you@computer:~ $ python3 ~/PesdaDB/pesdadb.py --set-default foo fuzz
 
@@ -59,7 +59,7 @@ if you want to overwrite a set of new default settings for your program, but thi
 
 ### Send in JSON, get back JSON
 
-in fact it will only store valid json. Then you can chain it to JQ or something if you like
+In fact it will only store valid json. Then you can chain it to JQ or something, if you like
 
     you@computer:~ $ python3 ~/PesdaDB/pesdadb.py --set my_array '["zuli", "kyan", "lars", "fozz"]'
 
@@ -84,19 +84,19 @@ in fact it will only store valid json. Then you can chain it to JQ or something 
 
 # Why
 
-I needed a robust key/value store that can be 
+I needed a robust key/value store that can be: 
 
 * Used simulataneously between many programs at the same time. 
 * Used in Python and on the CLI
 * Handle JSON & with safe defaults
 
-It's built upon the ubiquitous and amazing Sqlite3 which does all ofthe hard work to satisfay my wishlist above, and so PesdaDB is just a python wrapper for some SQL commands.
+It's built upon the ubiquitous and amazing Sqlite3 which does all of the hard work to satisfy my wishlist above, and so PesdaDB is just a Python wrapper for some SQL commands.
 
     
 # License
 
 PesdaDB is provided under the MIT license,  
- but if you use it commercially or otherwise, please consider send a postcard, by mail, from wherever you live, to:
+ but if you use it commercially or otherwise, please consider sending a postcard, by mail from wherever you live, to:
 
     Rob & Family
     EvoMetric
